@@ -6,3 +6,6 @@ C:\Users\iesb\Downloads\IESB_TurmaA_1S_2016-Aula_06_LINQ\IESB_TurmaA_1S_2016-Aul
 C:\Users\iesb\Downloads\IESB_TurmaA_1S_2016-Aula_06_LINQ\IESB_TurmaA_1S_2016-Aula_06_LINQ\TA1S2016\LINQ\obj\Debug\LINQ.csprojResolveAssemblyReference.cache
 C:\Users\iesb\Downloads\IESB_TurmaA_1S_2016-Aula_06_LINQ\IESB_TurmaA_1S_2016-Aula_06_LINQ\TA1S2016\LINQ\obj\Debug\LINQ.exe
 C:\Users\iesb\Downloads\IESB_TurmaA_1S_2016-Aula_06_LINQ\IESB_TurmaA_1S_2016-Aula_06_LINQ\TA1S2016\LINQ\obj\Debug\LINQ.pdb
+C:\Users\Maica\Documents\Projetos\Windows10\Aula 6\LINQ\bin\Debug\LINQ.exe.config
+C:\Users\Maica\Documents\Projetos\Windows10\Aula 6\LINQ\obj\Debug\LINQ.exe
+C:\Users\Maica\Documents\Projetos\Windows10\Aula 6\LINQ\obj\Debug\LINQ.pdb
