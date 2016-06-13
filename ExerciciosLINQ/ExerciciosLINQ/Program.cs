@@ -15,6 +15,8 @@ namespace LINQ
         {
             //Exercicio01A();
             //Exercicio01B();
+            //Exercicio02A();
+            Exercicio02B();
             Console.ReadLine();
         }
 
@@ -76,13 +78,22 @@ namespace LINQ
             Console.WriteLine("EXERCÍCIO 02 A - expressão");
             
             ///TODO: Substitua o funcionários pelo filtro.
-            var filtro = funcionarios;
+            var filtro = from f in funcionarios
+                         where f.DataAdmissao.Year < (DateTime.Now.Year - 8)
+                         orderby f.DataAdmissao ascending
+                         select new
+                         {
+                             Nome = f.NomeCompleto,
+                             Data = f.DataAdmissao,
+                             Anos = DateTime.Now.Year - f.DataAdmissao.Year,
+                             Depto = f.Departamento.Nome
+                         };
 
             ///TODO: Descomente o trecho de código abaixo para testar o filtro.
-            //foreach (var item in filtro)
-            //{
-            //    Console.WriteLine($"{item.Nome} - {item.Data:dd/MM/yyyy} - {item.Anos} - {item.Depto}");
-            //}
+            foreach (var item in filtro)
+            {
+                Console.WriteLine($"{item.Nome} - {item.Data:dd/MM/yyyy} - {item.Anos} - {item.Depto}");
+            }
             return filtro;
         }
 
@@ -92,13 +103,22 @@ namespace LINQ
             Console.WriteLine("EXERCÍCIO 02 B - método de extensão");
             
             ///TODO: Substitua o funcionários pelo filtro.
-            var filtro = funcionarios;
+            var filtro = funcionarios
+                            .Where((f) => f.DataAdmissao.Year < (DateTime.Now.Year - 8))
+                            .OrderBy((f) => f.DataAdmissao)
+                            .Select((grp) => new
+                            {
+                                Nome = grp.NomeCompleto,
+                                Data = grp.DataAdmissao,
+                                Anos = DateTime.Now.Year - grp.DataAdmissao.Year,
+                                Depto = grp.Departamento.Nome
+                            });
 
             ///TODO: Descomente o trecho de código abaixo para testar o filtro.
-            //foreach (var item in filtro)
-            //{
-            //    Console.WriteLine($"{item.Nome} - {item.Data:dd/MM/yyyy} - {item.Anos} - {item.Depto}");
-            //}
+            foreach (var item in filtro)
+            {
+                Console.WriteLine($"{item.Nome} - {item.Data:dd/MM/yyyy} - {item.Anos} - {item.Depto}");
+            }
             return filtro;
         }
         #endregion
