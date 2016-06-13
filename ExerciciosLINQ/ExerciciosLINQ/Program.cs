@@ -16,7 +16,9 @@ namespace LINQ
             //Exercicio01A();
             //Exercicio01B();
             //Exercicio02A();
-            Exercicio02B();
+            //Exercicio02B();
+            Exercicio03A();
+            //Exercicio03B();
             Console.ReadLine();
         }
 
@@ -138,15 +140,25 @@ namespace LINQ
         {
             Console.WriteLine();
             Console.WriteLine("EXERCÍCIO 03 A - expressão");
-            
+
             ///TODO: Substitua o funcionários pelo filtro.
-            var filtro = funcionarios;
+            var filtro = from f in funcionarios
+                         group f by new
+                         {
+                             tipo = f.Salario >= 3000 ? "Faixa A" : f.Salario < 1000 ? "Faixa C" : "Faixa B"
+                         } 
+                         into g
+                         select new
+                         {
+                             Faixa = g.Key.tipo,
+                             Quantidade = g.Count()
+                         };
 
             ///TODO: Descomente o trecho de código abaixo para testar o filtro.
-            //foreach (var item in filtro)
-            //{
-            //    Console.WriteLine($"{item.Faixa} - {item.Quantidade}");
-            //}
+            foreach (var item in filtro)
+            {
+                Console.WriteLine($"{item.Faixa} - {item.Quantidade}");
+            }
             return filtro;
         }
 
@@ -156,13 +168,22 @@ namespace LINQ
             Console.WriteLine("EXERCÍCIO 03 B - método de extensão");
             
             ///TODO: Substitua o funcionários pelo filtro.
-            var filtro = funcionarios;
+            var filtro = funcionarios
+                            .GroupBy(f =>
+                            {
+                                return f.Salario >= 3000 ? "Faixa A" : f.Salario < 1000 ? "Faixa C" : "Faixa B";
+                            })
+                            .Select(g => new
+                            {
+                                Faixa = g.Key,
+                                Quantidade = g.Count()
+                            });
 
             ///TODO: Descomente o trecho de código abaixo para testar o filtro.
-            //foreach (var item in filtro)
-            //{
-            //    Console.WriteLine($"{item.Faixa} - {item.Quantidade}");
-            //}
+            foreach (var item in filtro)
+            {
+                Console.WriteLine($"{item.Faixa} - {item.Quantidade}");
+            }
             return filtro;
         }
         #endregion
