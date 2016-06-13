@@ -17,8 +17,10 @@ namespace LINQ
             //Exercicio01B();
             //Exercicio02A();
             //Exercicio02B();
-            Exercicio03A();
+            //Exercicio03A();
             //Exercicio03B();
+            //Exercicio04A();
+            Exercicio04B();
             Console.ReadLine();
         }
 
@@ -199,15 +201,21 @@ namespace LINQ
         {
             Console.WriteLine();
             Console.WriteLine("EXERCÍCIO 04 A - expressão");
-            
+
             ///TODO: Substitua o funcionários pelo filtro.
-            var filtro = funcionarios;
+            var filtro = from f in funcionarios
+                         group f by f.Departamento.Nome into g
+                         select new
+                         {
+                             Depto = g.Key,
+                             Quantidade = g.Count()
+                         };
 
             ///TODO: Descomente o trecho de código abaixo para testar o filtro.
-            //foreach (var item in filtro)
-            //{
-            //    Console.WriteLine($"{item.Depto} - {item.Quantidade}");
-            //}
+            foreach (var item in filtro)
+            {
+                Console.WriteLine($"{item.Depto} - {item.Quantidade}");
+            }
             return filtro;
         }
 
@@ -215,15 +223,21 @@ namespace LINQ
         {
             Console.WriteLine();
             Console.WriteLine("EXERCÍCIO 04 B - método de extensão");
-            
+
             ///TODO: Substitua o funcionários pelo filtro.
-            var filtro = funcionarios;
+            var filtro = funcionarios
+                            .GroupBy((f) => f.Departamento.Nome)
+                            .Select((g) => new
+                            {
+                                Depto = g.Key,
+                                Quantidade = g.Count()
+                            });
 
             ///TODO: Descomente o trecho de código abaixo para testar o filtro.
-            //foreach (var item in filtro)
-            //{
-            //    Console.WriteLine($"{item.Depto} - {item.Quantidade}");
-            //}
+            foreach (var item in filtro)
+            {
+                Console.WriteLine($"{item.Depto} - {item.Quantidade}");
+            }
             return filtro;
         } 
         #endregion
