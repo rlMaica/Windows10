@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="XAML.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XAML"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="4" Padding="-1,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <TextBox Header="Meu Campo de Texto" 
+                 Grid.Row="0"
+                 Text="Teste" 
+                 Height="75"
+                 Margin="4"
+                 Background="Red"/>
+
+        <ComboBox Grid.Row="1" HorizontalAlignment="Stretch" Margin="4" VerticalAlignment="Top">
+            <TextBlock Text="1ª Opção"/>
+            <TextBlock Text="2ª Opção"/>
+            <TextBlock Text="3ª Opção"/>
+        </ComboBox>
+
+        <DatePicker Grid.Row="2" HorizontalAlignment="Stretch" Margin="4"/>
+
+        <Button Grid.Row="3" Content="Botão" Margin="4,4,0,0" HorizontalAlignment="Stretch"/>
+    </Grid>
+</Page>
