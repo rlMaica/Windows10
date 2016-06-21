@@ -1,0 +1,70 @@
+﻿<Page
+    x:Class="Layouts.LayoutPivot"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Layouts"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Pivot Title="Pivot" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <PivotItem Header="StackPanel">
+            <StackPanel Orientation="Vertical">
+                <Rectangle Width="50" Height="50" Fill="Red" Margin="10"/>
+                <Rectangle Width="50" Height="50" Fill="Blue" Margin="10"/>
+                <Rectangle Width="50" Height="50" Fill="Green" Margin="10"/>
+                <Rectangle Width="50" Height="50" Fill="Yellow" Margin="10"/>
+                <Rectangle Width="50" Height="50" Fill="Black" Margin="10"/>
+                <Rectangle Width="50" Height="50" Fill="Purple" Margin="10"/>
+                <Rectangle Width="50" Height="50" Fill="RoyalBlue" Margin="10"/>
+            </StackPanel>
+        </PivotItem>
+
+        <PivotItem Header="Grid">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <Rectangle Width="50" Height="50" Fill="Red" Margin="10" Grid.Row="0"/>
+                <Rectangle Width="50" Height="50" Fill="Blue" Margin="10" Grid.Row="1"/>
+                <Rectangle Width="50" Height="50" Fill="Green" Margin="10" Grid.Row="2"/>
+                <Rectangle Width="50" Height="50" Fill="Yellow" Margin="10" Grid.Row="3"/>
+                <Rectangle Width="50" Height="50" Fill="Black" Margin="10" Grid.Row="4"/>
+                <Rectangle Width="50" Height="50" Fill="Purple" Margin="10" Grid.Row="5"/>
+                <Rectangle Width="50" Height="50" Fill="RoyalBlue" Margin="10" Grid.Row="6"/>
+            </Grid>
+        </PivotItem>
+
+        <PivotItem Header="Relative">
+            <RelativePanel>
+                <Rectangle Name="RecRed" Width="50" Height="50" Fill="Red" Margin="10"/>
+                
+                <Rectangle Name="RecBlue" Width="50" Height="50" Fill="Blue" Margin="10"
+                           RelativePanel.Below="RecRed"/>
+                
+                <Rectangle Name="RecGreen" Width="50" Height="50" Fill="Green" Margin="10"
+                           RelativePanel.Below="RecBlue"/>
+                
+                <Rectangle Name="RecYellow" Width="50" Height="50" Fill="Yellow" Margin="10"
+                           RelativePanel.Below="RecGreen"/>
+                
+                <Rectangle Name="RecBlack" Width="50" Height="50" Fill="Black" Margin="10"
+                           RelativePanel.Below="RecYellow"/>
+                
+                <Rectangle Name="RecPurple" Width="50" Height="50" Fill="Purple" Margin="10"
+                           RelativePanel.Below="RecBlack"/>
+                
+                <Rectangle Name="RecRoyalBlue" Width="50" Height="50" Fill="RoyalBlue" Margin="10"
+                           RelativePanel.Below="RecPurple"/>
+            </RelativePanel>
+        </PivotItem>
+    </Pivot>
+</Page>

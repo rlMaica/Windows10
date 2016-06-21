@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace Layouts
+namespace DataBinding
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -27,29 +27,14 @@ namespace Layouts
             this.InitializeComponent();
         }
 
-        private void Grid_Tapped(object sender, TappedRoutedEventArgs e)
+        private void Button_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(LayoutGrid));
+            this.Frame.Navigate(typeof(DataBindingSimples));
         }
 
-        private void StackPanel_Tapped(object sender, TappedRoutedEventArgs e)
+        private void Button_Tapped_1(object sender, TappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(LayoutStackPanel));
-        }
-
-        private void Canvas_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(LayoutCanvas));
-        }
-
-        private void RelativePanel_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(LayoutRelativePanel));
-        }
-
-        private void Pivot_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(LayoutPivot));
+            this.Frame.Navigate(typeof(DataBindingObjetos));
         }
     }
 }

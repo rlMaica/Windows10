@@ -47,13 +47,13 @@
                 HorizontalAlignment="Stretch"
                 Tapped="Canvas_Tapped"/>
         
-        <Button Content="ListView" 
+        <Button Content="RelativePanel" 
                 Grid.Row="3" 
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
                 Margin="4"
                 HorizontalAlignment="Stretch"
-                Tapped="ListView_Tapped"/>
+                Tapped="RelativePanel_Tapped"/>
 
         <Button Content="Pivot" 
                 Grid.Row="4" 
